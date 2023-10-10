@@ -1,4 +1,4 @@
-public class DinerMenu{
+public class DinerMenu implements Menu<MenuItem>{
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     MenuItem[] menuItems;
@@ -34,7 +34,11 @@ public class DinerMenu{
             numberOfItems++;
         }
     }
-    public MenuItem[] getMenuItems(){ return menuItems; }   
+    public MenuItem[] getMenuItems(){ return menuItems; }
+    
+    public Iterador<MenuItem> createIterador(){
+        return new DineMenuIterador(menuItems);
+    }
 
     
     

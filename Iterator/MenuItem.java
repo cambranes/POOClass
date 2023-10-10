@@ -16,4 +16,8 @@ public class MenuItem{
     public String getDescription(){ return description; }
     public boolean isVegetarian(){ return vegetarian; }
     public double getPrice(){ return price; }
+    
+    public String toString(){
+        return (name + ", $" + price + "\n" + description+"\n");
+    }
 }

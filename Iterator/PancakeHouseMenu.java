@@ -1,8 +1,10 @@
-public class PancakeHouseMenu {
-    ArrayList menuItems;
+import java.util.ArrayList;
+
+public class PancakeHouseMenu implements Menu<MenuItem> {
+    ArrayList<MenuItem> menuItems;
     
     public PancakeHouseMenu(){
-        menuItems = new ArrayList();
+        menuItems = new ArrayList<MenuItem>();
         
         addItem("K&B's Pancake Breakfast", "Pancakes with scrambled eggs, and toast", true, 2.99);
         
@@ -17,8 +19,10 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public ArrayList getMenuItems(){
+    public ArrayList<MenuItem> getMenuItems(){
         return menuItems;
     }
-
+public Iterador<MenuItem> createIterador(){
+        return new PancakeHouseMenuIterador(menuItems);
+    }   
 }
